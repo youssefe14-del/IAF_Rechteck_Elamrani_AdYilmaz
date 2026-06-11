@@ -9,7 +9,7 @@ namespace get.set_Projekt
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -21,28 +21,33 @@ namespace get.set_Projekt
         {
             // Rechteck-Objekt erzeugen 
 
-            
+
 
             try
-//versuche, diesen Code auszuführen 
-           {
+            //versuche, diesen Code auszuführen 
+            {
                 Rechteck r = new Rechteck(Convert.ToDouble(tbxBreite.Text), Convert.ToDouble(tbxHoehe.Text));
                 // Eigenschaften mit Werten aus Textboxen füllen 
-             
+
 
                 // Fläche und Umfang in den entsprechenden Textboxen ausgeben 
-                tbxFlaeche.Text= r.Flaeche.ToString();
+                tbxFlaeche.Text = r.Flaeche.ToString();
                 tbxUmfang.Text = r.Umfang.ToString();
 
-           }
-     //wenn eine Exception auftritt, dann...      
-           catch (Exception ex)
+            }
+            //wenn eine Exception auftritt, dann...      
+            catch (Exception ex)
 
-           {
+            {
 
-               MessageBox.Show(ex.Message, "Fehler");
+                MessageBox.Show(ex.Message, "Fehler");
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
