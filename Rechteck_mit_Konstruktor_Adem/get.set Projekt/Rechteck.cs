@@ -13,24 +13,24 @@ namespace get.set_Projekt
         private double hoehe;
         private double breite;
 
+
+        
         //Eigenschaften
         // regeln den Zugriff auf private Attribute --> nur plausible Werte 
         public double Hoehe
         {
             get { return hoehe; }
             set
-            {// nur positive Werte zulassen
+            {   // nur positive Werte zulassen
                 if (value > 0)
-                {
-                    hoehe = value;
-                }
+                    {
+                        hoehe = value;
+                    }
+
                 else
-
-                {
-
-                    throw new Exception("Höhe muss größer als 0 sein!");
-
-                }
+                    {
+                        throw new Exception("Höhe muss größer als 0 sein!");
+                    }
             }
         }
         public double Breite
@@ -42,43 +42,49 @@ namespace get.set_Projekt
                 {
                     breite = value;
                 }
+
                 else
-
                 {
-
                     throw new Exception("Breite muss größer als 0 sein!");
-
                 }
             }
         }
         public double Umfang
-
         {
-
             get
-
-            {
-
+            { 
                 return 2 * hoehe + 2 * breite;
-
             }
         }
 
              public double Flaeche
-        {
-            get
-            {
+             {
+                 get
+                 {
+                    return hoehe * breite;
+                 }
+             }
 
-                return hoehe * breite;
-
-
-            }
-        
-        }
         public Rechteck(double hoheDesRechtecks, double breiteDesRechtecks)
         {
             Breite = breiteDesRechtecks;
             Hoehe = hoheDesRechtecks;
         }
+       public void Rechtsumdrehung()
+       {
+            double tausch = hoehe;
+            hoehe = breite;
+            breite = tausch;
+       }
+
+        public void zoomen(double faktor)
+        { if (faktor > 0)
+            {
+                hoehe = hoehe * faktor;
+                breite = breite * faktor;
+
+            }
+            else throw new Exception(" zoomen.faktor muss ppsitiv sein");
+        }
     }
- }
+}
