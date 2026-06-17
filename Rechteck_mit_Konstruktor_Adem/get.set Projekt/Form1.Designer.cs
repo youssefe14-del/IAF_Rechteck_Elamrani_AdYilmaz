@@ -40,6 +40,7 @@
             btnZoom = new Button();
             btnDrehen = new Button();
             label1 = new Label();
+            txtDiagonal = new TextBox();
             SuspendLayout();
             // 
             // btnRechne
@@ -130,6 +131,7 @@
             btnZoom.TabIndex = 9;
             btnZoom.Text = "Zoom: 10%";
             btnZoom.UseVisualStyleBackColor = true;
+            btnZoom.Click += btnZoom_Click;
             // 
             // btnDrehen
             // 
@@ -149,11 +151,19 @@
             label1.TabIndex = 12;
             label1.Text = "Diagonal";
             // 
+            // txtDiagonal
+            // 
+            txtDiagonal.Location = new Point(155, 282);
+            txtDiagonal.Name = "txtDiagonal";
+            txtDiagonal.Size = new Size(110, 23);
+            txtDiagonal.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+            Controls.Add(txtDiagonal);
             Controls.Add(label1);
             Controls.Add(btnDrehen);
             Controls.Add(btnZoom);
@@ -188,5 +198,6 @@
         private Button btnZoom;
         private Button btnDrehen;
         private Label label1;
+        private TextBox txtDiagonal;
     }
 }

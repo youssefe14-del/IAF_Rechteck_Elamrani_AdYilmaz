@@ -49,5 +49,12 @@ namespace get.set_Projekt
         {
 
         }
+
+        private void btnZoom_Click(object sender, EventArgs e)
+        {
+            Rechteck r = new Rechteck(Convert.ToDouble(tbxHoehe.Text) , Convert.ToDouble(tbxBreite));
+
+            r.zoomen(1.1);
+        }
     }
 }
