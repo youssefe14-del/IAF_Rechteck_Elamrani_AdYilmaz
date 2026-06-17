@@ -64,6 +64,7 @@ namespace get.set_Projekt
                     return hoehe * breite;
                  }
              }
+        // eigenschaft für diagonal 
         public double Diagonal
         {
             get
@@ -71,11 +72,20 @@ namespace get.set_Projekt
                 return Math.Sqrt  ( (breite * breite) + ( hoehe * hoehe) );
             }
         }
+
+        // konstruktor verwenden für objekterstellen 
         public Rechteck(double hoheDesRechtecks, double breiteDesRechtecks)
         {
             Breite = breiteDesRechtecks;
             Hoehe = hoheDesRechtecks;
         }
+        public Rechteck(double hoheDesRechtecks)
+        {
+            Breite = hoheDesRechtecks;
+            Hoehe = hoheDesRechtecks;
+        }
+
+        // methoden für zoomen und rechtsumdrehung
        public void Rechtsumdrehung()
        {
             double tausch = hoehe;
