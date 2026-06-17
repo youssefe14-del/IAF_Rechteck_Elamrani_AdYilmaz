@@ -64,7 +64,13 @@ namespace get.set_Projekt
                     return hoehe * breite;
                  }
              }
-
+        public double Diagonal
+        {
+            get
+            {
+                return Math.Sqrt  ( (breite * breite) + ( hoehe * hoehe) );
+            }
+        }
         public Rechteck(double hoheDesRechtecks, double breiteDesRechtecks)
         {
             Breite = breiteDesRechtecks;
@@ -86,5 +92,8 @@ namespace get.set_Projekt
             }
             else throw new Exception(" zoomen.faktor muss ppsitiv sein");
         }
+
+
+
     }
 }
