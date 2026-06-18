@@ -33,6 +33,8 @@ namespace get.set_Projekt
                     }
             }
         }
+
+        // Es werden nur Werte größer als 0 akzeptiert sonst wird eine Fehlermeldung ausgegeben
         public double Breite
         {
             get { return breite; }
@@ -49,6 +51,8 @@ namespace get.set_Projekt
                 }
             }
         }
+
+        // Berechnet den Umfang des Rechtecks aus Höhe und Breite
         public double Umfang
         {
             get
@@ -57,7 +61,9 @@ namespace get.set_Projekt
             }
         }
 
-             public double Flaeche
+
+        // Berechnet die Fläche des Rechtecks 
+        public double Flaeche
              {
                  get
                  {
@@ -65,18 +71,28 @@ namespace get.set_Projekt
                  }
              }
 
+        // Berechnet die Diagonale des Rechtecks
+        public double Diagonale()
+        {
+            return Math.Sqrt ( (hoehe * hoehe) + (breite * breite) );
+        }
+
+        // Erstellt ein Rechteck und setzt Höhe und Breite
         public Rechteck(double hoheDesRechtecks, double breiteDesRechtecks)
         {
             Breite = breiteDesRechtecks;
             Hoehe = hoheDesRechtecks;
         }
-       public void Rechtsumdrehung()
+
+        // Dreht das Rechteck indem Höhe und Breite vertauscht werden
+        public void Rechtsumdrehung()
        {
             double tausch = hoehe;
             hoehe = breite;
             breite = tausch;
        }
 
+        // Der Faktor muss größer als 0 sein, sonst kommt eine Fehlermeldung
         public void zoomen(double faktor)
         { if (faktor > 0)
             {
@@ -84,7 +100,7 @@ namespace get.set_Projekt
                 breite = breite * faktor;
 
             }
-            else throw new Exception(" zoomen.faktor muss ppsitiv sein");
+            else throw new Exception(" zoomen.faktor muss positiv sein");
         }
     }
 }

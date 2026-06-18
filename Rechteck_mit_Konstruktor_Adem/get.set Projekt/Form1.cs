@@ -7,15 +7,6 @@ namespace get.set_Projekt
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnRechne_Click(object sender, EventArgs e)
         {
@@ -33,7 +24,8 @@ namespace get.set_Projekt
                 // Fläche und Umfang in den entsprechenden Textboxen ausgeben 
                 tbxFlaeche.Text = r.Flaeche.ToString();
                 tbxUmfang.Text = r.Umfang.ToString();
-
+                // Diagonale wird in den entsprechenden Textboxen ausgeben 
+                tbxDiagonal.Text = r.Diagonale().ToString();
             }
             //wenn eine Exception auftritt, dann...      
             catch (Exception ex)
@@ -45,16 +37,58 @@ namespace get.set_Projekt
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnZoom_Click(object sender, EventArgs e)
         {
-            Rechteck r = new Rechteck(Convert.ToDouble(tbxHoehe.Text) , Convert.ToDouble(tbxBreite));
+            try
+            {
+                Rechteck r = new Rechteck(
+                    Convert.ToDouble(tbxHoehe.Text),
+                    Convert.ToDouble(tbxBreite.Text)
+                );
 
-            r.zoomen(1.1);
+                r.zoomen(2);
+
+                // Neue Höhe und Breite anzeigen
+                tbxHoehe.Text = r.Hoehe.ToString();
+                tbxBreite.Text = r.Breite.ToString();
+
+                // Fläche und Umfang aktualisieren
+                tbxFlaeche.Text = r.Flaeche.ToString();
+                tbxUmfang.Text = r.Umfang.ToString();
+                tbxDiagonal.Text = r.Diagonale().ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
+        // Das Rechteck wird erstellt gedreht und die neuen Werte werden angezeigt wenn man auf den button klickt
+        private void btnDrehen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Rechteck r = new Rechteck(
+                    Convert.ToDouble(tbxHoehe.Text),
+                    Convert.ToDouble(tbxBreite.Text)
+                );
+
+                r.Rechtsumdrehung();
+
+                // Neue Werte anzeigen
+                tbxHoehe.Text = r.Hoehe.ToString();
+                tbxBreite.Text = r.Breite.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+      
+
+       
     }
 }

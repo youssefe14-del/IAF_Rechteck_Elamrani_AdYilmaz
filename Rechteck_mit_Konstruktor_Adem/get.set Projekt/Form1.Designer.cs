@@ -40,7 +40,7 @@
             btnZoom = new Button();
             btnDrehen = new Button();
             label1 = new Label();
-            txtDiagonal = new TextBox();
+            tbxDiagonal = new TextBox();
             SuspendLayout();
             // 
             // btnRechne
@@ -129,7 +129,7 @@
             btnZoom.Name = "btnZoom";
             btnZoom.Size = new Size(75, 23);
             btnZoom.TabIndex = 9;
-            btnZoom.Text = "Zoom: 10%";
+            btnZoom.Text = "X2 Zoom";
             btnZoom.UseVisualStyleBackColor = true;
             btnZoom.Click += btnZoom_Click;
             // 
@@ -141,6 +141,7 @@
             btnDrehen.TabIndex = 10;
             btnDrehen.Text = "90° drehen";
             btnDrehen.UseVisualStyleBackColor = true;
+            btnDrehen.Click += btnDrehen_Click;
             // 
             // label1
             // 
@@ -151,19 +152,20 @@
             label1.TabIndex = 12;
             label1.Text = "Diagonal";
             // 
-            // txtDiagonal
+            // tbxDiagonal
             // 
-            txtDiagonal.Location = new Point(155, 282);
-            txtDiagonal.Name = "txtDiagonal";
-            txtDiagonal.Size = new Size(110, 23);
-            txtDiagonal.TabIndex = 13;
+            tbxDiagonal.Location = new Point(155, 282);
+            tbxDiagonal.Name = "tbxDiagonal";
+            tbxDiagonal.Size = new Size(110, 23);
+            tbxDiagonal.TabIndex = 13;
+           
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
-            Controls.Add(txtDiagonal);
+            Controls.Add(tbxDiagonal);
             Controls.Add(label1);
             Controls.Add(btnDrehen);
             Controls.Add(btnZoom);
@@ -198,6 +200,6 @@
         private Button btnZoom;
         private Button btnDrehen;
         private Label label1;
-        private TextBox txtDiagonal;
+        private TextBox tbxDiagonal;
     }
 }
